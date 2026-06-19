@@ -81,6 +81,11 @@ app.use((req, res, next) => {
     next();
 }); 
 
+// Redirect root path to listings
+app.get("/", (req, res) => {
+    res.redirect("/listings");
+});
+
 // Route endpoints matching bikeshellers
 app.use("/listings", listingRouter);
 app.use("/listings/:id/reviews", reviewRouter);
