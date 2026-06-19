@@ -1,0 +1,94 @@
+<% layout("/layouts/boilerplate")%>
+<%=success%>
+<style>
+  #filters {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .filters {
+    text-align: center;
+    margin-right: 2rem;
+    margin-top: 2rem;
+  }
+  .tax-info {
+    display : none;
+  }
+
+  .tax-toggle {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 2rem;
+    margin-top: 2rem;
+  }
+</style>
+<div class="d-flex justify-content-between align-items-center flex-wrap">
+  <div class="filters">
+    <div id="filter">
+      <i class="fa-solid fa-fire text-danger fs-4"></i>
+    </div>
+    <p class="m-0">Trending</p>
+  </div>
+  <div class="tax-toggle">
+    <div class="form-check form-switch">
+      <input class="form-check-input" type="checkbox" role="switch" id="switchCheckDefault">
+      <label class="form-check-label" for="switchCheckDefault">Display total after tax (18% GST)</label>
+    </div>
+  </div>
+</div>
+
+<div class="mt-3">
+  <% if (searchVal) { %>
+    <h3>Search results for "<%= searchVal %>"</h3>
+  <% } %>
+</div>
+
+<div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 mt-3">
+  <% if(indexlisting.length === 0) { %>
+    <div class="col-12 text-center my-5">
+      <i class="fa-solid fa-plane-slash fs-1 text-muted mb-3"></i>
+      <h4>No stays found at this destination.</h4>
+      <p class="text-secondary">Try searching for another city, country, or explore all listings.</p>
+      <a href="/listings" class="btn btn-dark mt-2">View All Stays</a>
+    </div>
+  <% } else { %>
+    <% for(let listing of indexlisting) { %>
+      <div class="col mb-4">
+        <a href="/listings/<%=listing._id%>" class="listing-link text-decoration-none text-dark">
+          <div class="card listing-card h-100 shadow-sm border-0 rounded-3 overflow-hidden">
+            <div style="height: 14rem; overflow: hidden; position: relative;">
+              <img src="<%= listing.imageUrl.url %>" class="w-100 h-100 object-fit-cover" alt="<%= listing.title %>"/>
+              <div class="card-img-overlay bg-transparent p-2">
+                <span class="badge bg-dark text-white p-2">Stays</span>
+              </div>
+            </div>
+            <div class="card-body d-flex flex-column justify-content-between">
+              <div>
+                <h5 class="card-title text-truncate mb-1"><b><%= listing.title %></b></h5>
+                <p class="text-secondary mb-2"><i class="fa-solid fa-location-dot"></i> <%= listing.location %>, <%= listing.country %></p>
+              </div>
+              <p class="card-text fs-5 mb-0">
+                <b>&#8377; <%= listing.price.toLocaleString("en-IN") %></b> / night
+                <i class="tax-info text-success fs-6">&nbsp;&nbsp; +18% GST</i>
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+    <% } %>
+  <% } %>
+</div>
+
+<script>
+  let taxSwitch = document.getElementById("switchCheckDefault");
+  taxSwitch.addEventListener("click", () => {
+    let taxinfo = document.getElementsByClassName("tax-info");
+       for (info of taxinfo) {
+         if (info.style.display != "inline") {
+           info.style.display = "inline";
+         } else {
+           info.style.display = "none";
+         }
+       }
+  });
+</script>

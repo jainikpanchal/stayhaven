@@ -1,0 +1,240 @@
+.navbar {
+   height: 70px;
+}
+
+/* Custom Modern Footer Styling */
+.main-footer {
+   background-color: #111827;
+   color: #9ca3af;
+   padding: 4rem 0 2rem 0;
+   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+   border-top: 1px solid rgba(255, 255, 255, 0.08);
+   margin-top: 5rem;
+}
+
+.footer-container {
+   max-width: 1200px;
+   margin: 0 auto;
+   padding: 0 1.5rem;
+   display: grid;
+   grid-template-columns: 2fr 1fr;
+   gap: 3rem;
+}
+
+@media (max-width: 768px) {
+   .footer-container {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      text-align: center;
+   }
+}
+
+.footer-brand-section {
+   display: flex;
+   flex-direction: column;
+   gap: 1.25rem;
+}
+
+.footer-logo {
+   display: flex;
+   align-items: center;
+   gap: 0.75rem;
+   font-size: 1.75rem;
+   font-weight: 700;
+   color: #ffffff;
+}
+
+.footer-logo i {
+   color: #ff385c; /* Travel coral accent */
+}
+
+.footer-description {
+   font-size: 0.95rem;
+   line-height: 1.6;
+   color: #9ca3af;
+}
+
+.footer-socials {
+   display: flex;
+   gap: 1rem;
+}
+
+@media (max-width: 768px) {
+   .footer-socials {
+      justify-content: center;
+   }
+}
+
+.social-icon {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   width: 40px;
+   height: 40px;
+   border-radius: 50%;
+   background-color: rgba(255, 255, 255, 0.05);
+   color: #9ca3af;
+   text-decoration: none;
+   transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+   background-color: #ff385c;
+   color: #ffffff;
+   transform: translateY(-3px);
+}
+
+.footer-section-title {
+   font-size: 1.1rem;
+   font-weight: 600;
+   color: #ffffff;
+   margin-bottom: 1.25rem;
+}
+
+.footer-contact-list {
+   list-style: none;
+   padding: 0;
+   margin: 0;
+   display: flex;
+   flex-direction: column;
+   gap: 0.85rem;
+}
+
+.footer-links-list a {
+   color: #9ca3af;
+   text-decoration: none;
+   font-size: 0.95rem;
+   transition: all 0.2s ease;
+}
+
+.footer-links-list a:hover {
+   color: #ffffff;
+   padding-left: 4px;
+}
+
+.footer-contact-list li {
+   display: flex;
+   align-items: center;
+   gap: 0.75rem;
+   font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+   .footer-contact-list li {
+      justify-content: center;
+   }
+}
+
+.footer-contact-list li i {
+   color: #ff385c;
+   width: 16px;
+}
+
+.footer-bottom {
+   margin-top: 3.5rem;
+   border-top: 1px solid rgba(255, 255, 255, 0.05);
+   padding-top: 2rem;
+}
+
+.footer-bottom-container {
+   max-width: 1200px;
+   margin: 0 auto;
+   padding: 0 1.5rem;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   flex-wrap: wrap;
+   gap: 1rem;
+   font-size: 0.875rem;
+}
+
+@media (max-width: 768px) {
+   .footer-bottom-container {
+      flex-direction: column;
+      text-align: center;
+   }
+}
+
+.footer-legal-links {
+   display: flex;
+   gap: 1.5rem;
+}
+
+.footer-legal-links a {
+   color: #9ca3af;
+   text-decoration: none;
+   transition: color 0.2s ease;
+}
+
+.footer-legal-links a:hover {
+   color: #ffffff;
+}
+
+/* card */
+.listing-card {
+   border: none !important;
+   margin-bottom: 20px;
+   transition: transform 0.2s ease;
+}
+
+.listing-card:hover {
+   transform: scale(1.02);
+}
+
+.card-img-top {
+   border-radius: 15px;
+   width: 100% !important;
+   object-fit: cover !important;
+}
+
+.listing-card .card-img-top {
+   height: 200px !important;
+}
+
+.card-body {
+   padding: 10px 0 !important;
+}
+
+.listing-link {
+   text-decoration: none;
+}
+
+/* card effect */
+.card-img-overlay {
+   opacity: 0;
+   transition: opacity 0.2s ease;
+}
+
+.card-img-overlay:hover {
+   opacity: 0.2;
+   background-color: white;
+}
+
+/* show image */
+.show-img {
+   height: 350px !important;
+   width: 100% !important;
+   object-fit: cover !important;
+   border-radius: 15px !important;
+}
+
+/* general buttons styling */
+.btn-dark {
+   background-color: #ff385c !important;
+   border-color: #ff385c !important;
+}
+
+.btn-dark:hover {
+   background-color: #e31c5f !important;
+   border-color: #e31c5f !important;
+}
+
+.btn-outline-success {
+   color: #ff385c !important;
+   border-color: #ff385c !important;
+}
+
+.btn-outline-success:hover {
+   background-color: #ff385c !important;
+   color: white !important;
+}

@@ -1,0 +1,42 @@
+<% layout("/layouts/boilerplate")%>
+<div class="row">
+    <div class="col-8 offset-2">
+        <h2 class="mb-4">Edit Stay Listing</h2>
+        <form method="post" action="/listings/<%= listing._id %>?_method=PUT" novalidate class="needs-validation" enctype="multipart/form-data">
+            <div class="mb-3">
+                <label for="title" class="form-label">Title</label>
+                <input class="form-control" name="listing[title]" type="text" value="<%= listing.title %>" required>
+                <div class="invalid-feedback">Title is required.</div>
+            </div>
+            <div class="mb-3">
+                <label for="description" class="form-label">Description</label>
+                <textarea class="form-control" name="listing[description]" rows="4" required><%= listing.description %></textarea>
+                <div class="invalid-feedback">Description is required.</div>
+            </div>
+            <div class="mb-3">
+                <label for="price" class="form-label">Price per Night (INR)</label>
+                <input class="form-control" name="listing[price]" type="number" value="<%= listing.price %>" required>
+                <div class="invalid-feedback">Please enter a valid price.</div>
+            </div>
+            <div class="mb-3">
+                <label for="location" class="form-label">Location</label>
+                <input class="form-control" name="listing[location]" type="text" value="<%= listing.location %>" required>
+                <div class="invalid-feedback">Location is required.</div>
+            </div>
+            <div class="mb-3">
+                <label for="country" class="form-label">Country</label>
+                <input class="form-control" name="listing[country]" type="text" value="<%= listing.country %>" required>
+                <div class="invalid-feedback">Country is required.</div>
+            </div>
+            
+            <div class="mb-3">
+                <p>Original Image Preview:</p>
+                <img src="<%= originalImageUrl %>" class="img-thumbnail d-block mb-3" alt="original_image" style="max-height: 150px;">
+                <label for="image" class="form-label">Upload New Image (Optional)</label>
+                <input class="form-control" name="listing[imageUrl]" type="file">
+            </div>
+            <button class="btn btn-dark mt-2">Update Listing</button>
+        </form>
+        <br><br>
+    </div>
+</div>

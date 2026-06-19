@@ -1,0 +1,46 @@
+<% layout("/layouts/boilerplate")%>
+
+<div class="row mt-3">
+    <h2 class="col-6 offset-3">Sign Up to StayHaven</h2>
+  <div class="col-6 offset-3">
+    <form action="/signup" method="POST" class="needs-validation" novalidate>
+      <div class="mb-3">
+        <label for="username" class="form-label">Username</label>
+        <input
+          class="form-control"
+          name="username"
+          id="username"
+          type="text"
+          placeholder="enter your username"
+          required
+        />
+        <div class="invalid-feedback">Username is required.</div>
+      </div>
+      <div class="mb-3">
+        <label for="Email" class="form-label">Email</label>
+        <input
+          class="form-control"
+          name="Email"
+          id="Email"
+          type="email"
+          placeholder="enter your Email Id"
+          required
+        />
+        <div class="invalid-feedback">Email is required.</div>
+      </div>
+      <div class="mb-3">
+        <label for="Password" class="form-label">Password</label>
+        <input
+          class="form-control"
+          name="Password"
+          id="Password"
+          type="password"
+          placeholder="enter your Password"
+          required
+        />
+        <div class="invalid-feedback">Password is required.</div>
+      </div>
+      <button class="btn btn-success">Sign Up</button>
+    </form>
+  </div>
+</div>
